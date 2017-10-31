@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@import url(normalize.css);
+@import url(bootstrap-grid.css);
+@font-face {
+  font-family: customFont;
+  src: url("../font/xxx.eot");
+  src: url("../font/xxx.eot?#iefix") format("embedded-opentype");
+  src: url("../font/xxx.woff") format("woff");
+  src: url("../font/xxx.ttf") format("truetype");
+  src: url("../font/xxx.svg#AftaserifRegular") format("svg"); }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  word-wrap: break-word;
+  word-break: normal;
+  vertical-align: middle;
+  outline: none;
+  -webkit-overflow-scrolling: touch; }
+
+a {
+  color: inherit;
+  cursor: pointer; }
+  a:hover {
+    color: inherit;
+    text-decoration: none; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  font-family: Helvetica, Arial, 'Hiragino Sans GB', 'Lantinghei TC', 'WenQuanYi Micro Hei', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+  font-size: 15px;
+  overflow: hidden;
+  position: fixed;
+  left: 0px;
+  top: 0px; }
+
+#page {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.main-content {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  margin: auto;  
+  position: relative; }
+
+.game-start .count {
+  font-size: 36px;
+  color: #666666;
+  text-align: center;
+  padding: 30px 0px; }
+
+.game-start .num {
+  font-size: 64px;
+  color: red;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 0px 5px; }
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100000; }
+  .lightbox .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    overflow: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 40px 15px; }
+  .lightbox .board {
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    max-width: 1010px;
+    position: relative; }
+
+.rolling .board {
+  text-align: center; }
+
+.rolling .tip {
+  font-size: 38px;
+  color: white;
+  margin: 50px 0px; }
+
+.done .board {
+  text-align: center; }
+
+.done .result {
+  font-size: 38px;
+  color: white;
+  margin: 50px 0px;
+  padding: 30px;
+  border: solid 2px white;
+  border-radius: 10px; }
+
+.done .btn {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 15px 60px;
+  border-radius: 1000px;
+  font-size: 42px;
+  margin: 15px 0px; }
