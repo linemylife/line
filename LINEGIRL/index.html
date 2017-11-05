@@ -84,7 +84,7 @@
           roll: function(){
             if( this.game_count !== 0 ){
               this.lightboxOpen('rolling');
-              this.roll_result = getRandom(1, 3);
+              this.roll_result = getRandom(1, 5);
               setTimeout(function() {
                 vm.roll_done();
               }, 1500);
