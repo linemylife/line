@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../plugin/animate-css-3.5.2/animate-3.5.2.css">
     <link rel="stylesheet" href="../css/all.css">
-    <title>LINE抽獎活動</title>
+    <title>LINE交友配對系統</title>
   </head>
   <body>
     <div class="site" id="page" style="background-color:#faffdf; background-image:url('img/mask_filter.png');">
@@ -20,7 +20,7 @@
 
         <!--抽獎主圖-->
         <div class="game-start"><img src="img/main.gif" @click="roll()">
-          <div class="count">您的抽獎剩餘次數為：<span class="num" style="color:#ff0000">{{game_count}}</span>次</div>
+          <div class="count">您的配對剩餘次數為：<span class="num" style="color:#ff0000">{{game_count}}</span>次</div>
         </div>
         <!--抽獎主圖 end-->
 
@@ -29,7 +29,7 @@
         <div class="lightbox rolling" v-if="lightbox_name === 'rolling'">
           <div class="inner">
             <div class="board"><img class="animated shake infinite" src="img/chest_close.png">
-              <div class="tip">...寶箱開啟中...</div>
+              <div class="tip">...配對寶箱開啟中...</div>
             </div>
           </div>
         </div>
@@ -43,25 +43,29 @@
             <div class="board"><img class="animated pulse infinite" src="img/chest_open.png">
               <div class="result">
                 <div class="item" v-if="roll_result === 1">
-                  <div class="title">恭喜你配對到小珍</div>
-                  <a href="https://i.imgur.com/VNJ8Tns.jpg"><div class="btn">點擊查看她的ID</div></a>
+                  <div class="title">恭喜你與 沙家芊 成功配對</div>
+                  <a href="http://line.me/ti/p/s6rZAASjHH"><div class="btn">點擊查看她好友資訊</div></a>
               </div>
               <div class="item" v-if="roll_result === 2">
-                <div class="title">恭喜你配對到小乃</div>
-                <a href="https://i.imgur.com/lMj4irS.jpg"><div class="btn">點擊查看她的ID</div></a>
+                <div class="title">恭喜你與 愷恩 成功配對</div>
+                <a href="http://line.me/ti/p/g4GylZlujW"><div class="btn">點擊查看她好友資訊</div></a>
               </div>
               <div class="item" v-if="roll_result === 3">
-                <div class="title">恭喜你配對到涔涔</div>
-                <a href="https://i.imgur.com/Jy06UYe.jpg"><div class="btn">點擊查看她的ID</div></a>
+                <div class="title">恭喜你與 Ashelly 成功配對</div>
+                <a href="https://i.imgur.com/ZSYNLuo.jpg"><div class="btn">點擊查看她的ID</div></a>
               </div>
                 <div class="item" v-if="roll_result === 4">
-                <div class="title">恭喜你配對到JENNY</div>
-                  <a href="https://i.imgur.com/t9985mO.jpg"><div class="btn">點擊查看她的ID</div></a>
+                <div class="title">恭喜你與 Annie 成功配對</div>
+                  <a href="https://i.imgur.com/nj3Nfnf.jpg"><div class="btn">點擊查看她的ID</div></a>
               </div>
               <div class="item" v-if="roll_result === 5">
-                <div class="title">恭喜你配對到ANGEL</div>
-                <a href="https://i.imgur.com/3qAZB4w.jpg"><div class="btn">點擊查看她的ID</div></a>
+                <div class="title">恭喜你與 呂聿心 成功配對</div>
+                <a href="https://i.imgur.com/uXXqP6E.jpg"><div class="btn">點擊查看她的ID</div></a>
                 </div>
+                <div class="item" v-if="roll_result === 6">
+                  <div class="title">恭喜你與 艾莉 成功配對</div>
+                  <a href="https://i.imgur.com/3G3mWT5.jpg"><div class="btn">點擊查看她的ID</div></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -84,13 +88,13 @@
           roll: function(){
             if( this.game_count !== 0 ){
               this.lightboxOpen('rolling');
-              this.roll_result = getRandom(1, 5);
+              this.roll_result = getRandom(1, 6);
               setTimeout(function() {
                 vm.roll_done();
               }, 1500);
             }
             else{
-              alert('幹你這色胚，已經配對過了！請分享5個群組就可以再配對一次!');
+              alert('幹你這色胚，已經配對過了！請分享給5個群組就可以再配對一次!');
             }
           },
           roll_done: function(){
@@ -109,7 +113,7 @@
         },
         mounted: function(){
           
-           $.cookie("count", 1, { expires: 365, path:'/' });
+          // $.cookie("count", 1, { expires: 365, path:'/' });
 
           if( $.cookie("count") ===null || $.cookie("count") == 1 ){
             $.cookie("count", 1, { expires: 365, path:'/' });
