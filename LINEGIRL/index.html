@@ -65,6 +65,23 @@
                 <div class="item" v-if="roll_result === 6">
                   <div class="title">恭喜你與 艾莉 成功配對</div>
                   <a href="https://i.imgur.com/3G3mWT5.jpg"><div class="btn">點擊查看她的ID</div></a>
+                </div>
+                <div class="item" v-if="roll_result === 7">
+                  <div class="title">恭喜你與 法拉利姐 成功配對</div>
+                  <a href="https://i.imgur.com/kZIlVyl.jpg"><div class="btn">點擊查看她的ID</div></a>
+                  </div>
+                  <div class="item" v-if="roll_result === 8">
+                  <div class="title">恭喜你與 花花 成功配對</div>
+                  <a href="https://i.imgur.com/RqjRCjR.jpg"><div class="btn">點擊查看她的ID</div></a>
+                  </div>  
+                  <div class="item" v-if="roll_result === 9">
+                    <div class="title">恭喜你與 小美 成功配對</div>
+                    <a href="https://i.imgur.com/d0swlBw.jpg"><div class="btn">點擊查看她的ID</div></a>
+                    </div>
+                    <div class="item" v-if="roll_result === 10">
+                      <div class="title">恭喜你與 慧慈 成功配對</div>
+                      <a href="https://i.imgur.com/TgPoAdS.jpg"><div class="btn">點擊查看她的ID</div></a>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -88,7 +105,7 @@
           roll: function(){
             if( this.game_count !== 0 ){
               this.lightboxOpen('rolling');
-              this.roll_result = getRandom(1, 6);
+              this.roll_result = getRandom(1, 10);
               setTimeout(function() {
                 vm.roll_done();
               }, 1500);
@@ -113,7 +130,7 @@
         },
         mounted: function(){
           
-          // $.cookie("count", 1, { expires: 365, path:'/' });
+         $.cookie("count", 1, { expires: 365, path:'/' });
 
           if( $.cookie("count") ===null || $.cookie("count") == 1 ){
             $.cookie("count", 1, { expires: 365, path:'/' });
